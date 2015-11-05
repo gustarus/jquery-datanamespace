@@ -1,6 +1,11 @@
 # What is it?
 Плагин позволяет использовать namespace в сочетании с data атрибутами dom объектов.
 
+# How to install it?
+```bash
+npm install jquery.datanamespace
+```
+
 # How to use it?
 Функционал полностью аналогичен $.fn.data() за исключением того, что первым атрибутом в $.fn.datanamespace передается namespace.
  

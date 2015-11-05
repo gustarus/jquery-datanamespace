@@ -24,15 +24,15 @@
  *    console.log($node.datanamespace('plugin'));
  *    // -> {color: "red", size: "big"}
  */
-(function(factory) {
+(function (factory) {
   if (typeof module === 'object' && typeof module.exports === 'object') { // common.js module
     factory(require('jquery'));
   } else { // global component
     factory(jQuery);
   }
-}(function($) {
+}(function ($) {
 
-  $.fn.datanamespace = function(namespace, key, value) {
+  $.fn.datanamespace = function (namespace, key, value) {
     if (typeof namespace == 'string') {
       switch (true) {
         // return all namespaced data
@@ -72,7 +72,7 @@
    * @returns {string|*|XML|void}
    */
   function camelize(str) {
-    return str.replace(/(-|\.)(\w)/g, function(match, symbol) {
+    return str.replace(/(-|\.)(\w)/g, function (match, symbol) {
       return symbol.toUpperCase();
     });
   }
@@ -82,7 +82,7 @@
    * @returns {string|*|XML|void}
    */
   function uncamelize(str) {
-    return str.replace(/[A-Z]/g, function(symbol, index) {
+    return str.replace(/[A-Z]/g, function (symbol, index) {
       return (index == 0 ? '' : '-') + symbol.toLowerCase();
     });
   }
@@ -105,7 +105,7 @@
     var prefix = convertNamespaceToPath(namespace) + '-';
 
     var data = {};
-    $.each(attributes, function(value, key) {
+    $.each(attributes, function (value, key) {
       data[prefix + key] = value;
     });
 
@@ -121,7 +121,7 @@
     var prefix = camelize(namespace);
 
     var options = {};
-    $.each($node.data(), function(index, value) {
+    $.each($node.data(), function (index, value) {
       if (index.indexOf(prefix) === 0) {
         options[uncamelize(index.replace(prefix, ''))] = value;
       }

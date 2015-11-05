@@ -1,5 +1,5 @@
 {
-  "name": "jquery-datanamespace",
+  "name": "jquery.datanamespace",
   "version": "1.0.0",
   "description": "Namespaces for jquery data attributes",
   "main": "plugin.js",
